@@ -108,6 +108,45 @@ export type Database = {
           },
         ]
       }
+      smtp_config: {
+        Row: {
+          created_at: string
+          from_email: string
+          from_name: string | null
+          host: string
+          id: string
+          password: string
+          port: number
+          updated_at: string
+          use_tls: boolean | null
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          from_email: string
+          from_name?: string | null
+          host: string
+          id?: string
+          password: string
+          port?: number
+          updated_at?: string
+          use_tls?: boolean | null
+          username: string
+        }
+        Update: {
+          created_at?: string
+          from_email?: string
+          from_name?: string | null
+          host?: string
+          id?: string
+          password?: string
+          port?: number
+          updated_at?: string
+          use_tls?: boolean | null
+          username?: string
+        }
+        Relationships: []
+      }
       supervision_registrations: {
         Row: {
           canceled_at: string | null
@@ -236,6 +275,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      invoke_supervision_reminders: { Args: never; Returns: number }
       supervision_seats: {
         Args: { _slug: string }
         Returns: {
